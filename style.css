@@ -1,7 +1,29 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url(./img/onda.svg)
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url(./img/onda-escura.svg) 
+  }
+  
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
-  background: #f7f7f7;
+  background: var(--fundo-1);
   display: grid;
   gap: 3.75rem;
   justify-items: center;
@@ -50,17 +72,17 @@ p {
 
 .menu a {
   display: block;
-  background: #ffffff;
+  background: var(--fundo-2);
   padding: 0.93rem 1.86rem;
   border-radius: 4px;
-  color: #000000;
+  color: var(--texto);
   text-transform: uppercase;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--fundo-2);
   transition-duration: 0.3s;
 }
 
 .menu a:hover {
-  border: 1px solid #e21;
+  border: 1px solid var(--cor-primaria);
   transition-duration: 0.3s;
 }
 
@@ -73,7 +95,7 @@ p {
 
 
 .introducao {
-  background: #fff;
+  background: var(--fundo-2);
   padding: 2.5rem;
   text-align: right;
   position: relative;
@@ -81,6 +103,7 @@ p {
   gap: 1.25rem;
   align-content: center;
   justify-items: end;
+  color: var(--texto);
 }
 
 .introducao h1 {
@@ -91,7 +114,7 @@ h1::before {
   content: "";
   width: 3.75rem;
   height: 0.25rem;
-  background: #e21;
+  background: var(--cor-primaria);
   position: absolute;
   top: 1.875rem;
   right: -1.875rem;
@@ -103,8 +126,8 @@ h1::before {
 }
 
 .botao {
-  background: #e21;
-  color: #fff;
+  background: var(--cor-primaria);
+  color: var(--fundo-2)f;
   padding: 0.9375rem 1.875rem;
   border-radius: 0.25rem;
   text-transform: uppercase;
@@ -119,11 +142,11 @@ h1::before {
 .subtitulo {
   font-size: 4rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--subtitulo);
   text-align: right;
   padding: 2.5rem;
   align-self: center;
-  background-image: url(./img/onda.svg);
+  background-image: var(--onda);
   background-repeat: repeat;
 }
 
@@ -131,8 +154,9 @@ h1::before {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background: #fff;
+  background: var(--fundo-2);
   padding: 2.5rem;
+  color: var(--texto);
 }
 
 .vantagens-item {
@@ -143,11 +167,11 @@ h1::before {
 }
 
 .vantagens-item:nth-child(odd) {
-  background-color: #f7f7f7;
+  background-color: var(--fundo-1);
 }
 
 .vantagens-item:hover {
-  border-left: 2px solid #e21;
+  border-left: 2px solid var(--cor-primaria);
 }
 
 .vantagens-item p {
@@ -155,7 +179,7 @@ h1::before {
 }
 
 .rodape {
-  background: #fff;
+  background: var(--fundo-2);
   width: 100%;
   text-align: center;
   padding: 2.5rem;
